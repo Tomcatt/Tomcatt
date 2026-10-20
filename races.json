@@ -1,0 +1,7 @@
+{
+  "active": "squads-2v2-seed2",
+  "races": {
+    "duel-seed5": {"mode": "duel", "seed": 5},
+    "squads-2v2-seed2": {"mode": "teams", "team_size": 2, "teamwork": true, "seed": 2}
+  }
+}
