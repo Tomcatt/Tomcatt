@@ -9,6 +9,7 @@ lighting up the squares they pass, until one of them derezzes.
 import argparse
 import random
 import re
+import sys
 import urllib.request
 from collections import deque
 
@@ -29,6 +30,8 @@ DIRS = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
 def fetch_levels(user):
     """Return grid[col][row] of levels 0-4 (None for days not shown)."""
+    if not re.fullmatch(r"[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})", user):
+        sys.exit(f"not a valid GitHub username: {user!r}")
     req = urllib.request.Request(
         f"https://github.com/users/{user}/contributions",
         headers={"User-Agent": "tron-contrib"})
